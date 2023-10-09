@@ -1,6 +1,11 @@
 # As aventuras de $`\pi`$
 
-## Solução Primeira
+Esse texto se inspira no problema apresentado no vídeo ["The most unexpected answer to a counting puzzle"](https://www.youtube.com/watch?v=HEfHFsfGXjs) e apresenta uma solução a sua maneira. 
+
+O problema: 
+um bloco de massa $`m`$ é colocado entre uma parede imóvel e um bloco de massa $`M`$ que se desloca em direção ao primeiro bloco. Se $M>m$ e considerarmos que as colisões são elásticas, qual o número total de colisões experimentada pelos três elementos? 
+
+## Primeira Abordagem
 ### Condições Iniciais
 Vamos adotar a seguinte convenção: 
 
