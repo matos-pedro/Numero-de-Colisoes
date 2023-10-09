@@ -112,7 +112,7 @@ QQ^{-1} = I
 
 #### Então, vamos achar $`\Lambda`$ e $`Q`$!
 
-##### Encontrando $\Lambda$:
+##### Encontrando $`\Lambda`$:
 
 ```math
 det(C-\lambda I) =  [(1-\alpha^2)-\lambda]^2 + 4\alpha^2 = 0`
