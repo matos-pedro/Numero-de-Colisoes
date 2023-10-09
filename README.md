@@ -83,7 +83,7 @@ Conseguimos imaginar que suscessivas colisões irão implicar na transferência 
 
 Logo após a inversão, as colisões ocorrerão com velocidades $u_k >> v_k > 0$, e as colisões subsequentes só irão cessar quando o sistema experimentar $v_k > u_k$, o bloco maior escapará do bloco menor e não haverá mais colisão. 
 
-##### Agora que $v_k$ é positivo, qual o sinal de $u_{k+1}$ após colisões entre os blocos? 
+##### Agora que $`v_k`$ é positivo, qual o sinal de $`u_{k+1}`$ após colisões entre os blocos? 
 De acordo com equação (2), o sinal de $u_{k+1}$ será negativo enquanto $u_k > [2/(1-\alpha^2)]v_k $. Esse resultado, consequentemente, implica em mais uma colisão com a parede.
 
 Em seguida, suscessivas colisões reduzirâo $|u_k|$ até que o sistema experimente as velocidades $u_k<[2/(1-\alpha^2)]v_k$, e $u_{k+1}$ venha a ser positivo e menor que $v_{k+1}$, cessando as colisões.
@@ -98,15 +98,18 @@ Inicialmente, vamos usar da autodecomposição para calcular $C^k$: $C$ pode ser
 E por que usar isso? Porque podemos reescrever
 
 ```math
-C^k = \underbrace{Q \Lambda Q^{-1} ... Q \Lambda Q^{-1}}_{k \times} = Q \Lambda^{k}Q^{-1}$$ 
-desde que $$QQ^{-1} = I
+C^k = \underbrace{Q \Lambda Q^{-1} ... Q \Lambda Q^{-1}}_{k \times} = Q \Lambda^{k}Q^{-1}
+``` 
+desde que
+```math
+QQ^{-1} = I
 ```
 
-#### Então, vamos achar $\Lambda$ e $Q$!
+#### Então, vamos achar $`\Lambda`$ e $`Q`$!
 
 ##### Encontrando $\Lambda$:
 
-$det(C-\lambda I) =  [(1-\alpha^2)-\lambda]^2 + 4\alpha^2 = 0$ e aqui nós encontramos dois autovalores complexos:\
+$`det(C-\lambda I) =  [(1-\alpha^2)-\lambda]^2 + 4\alpha^2 = 0`$ e aqui nós encontramos dois autovalores complexos:\
 $\lambda_1 = (1-\alpha^2) - i2\alpha$ e \
 $\lambda_2 = (1-\alpha^2) + i2\alpha$. 
 
@@ -116,6 +119,7 @@ $\lambda_2 = (1-\alpha^2) + i2\alpha$.
 ##### Encontrando $Q$:
 
 Já os autovetores $v$ são tais que 
+
 $(C - \lambda_i I)\begin{bmatrix} x_i \\ y_i  \end{bmatrix} = 0$, que nos leva aos autovetores
 $\nu{_1}^T = [1,i\alpha]$ e $\nu{_2}^T = [1,-i\alpha]$. Portanto:
 ```math
@@ -154,7 +158,7 @@ Conhecendo a equação 4, vamos aplicar o operador $C^k$ sobre as velocidades in
 \tag{5}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} = \left(\frac{V_0}{2\alpha}\right) \left(\frac{1}{1+\alpha^2}\right)^k \begin{bmatrix} i(\lambda_2^k-\lambda_1^k) \\ -a(\lambda_1^k + \lambda_2^k) \end{bmatrix}
 ```
 
-#### Legal, mas o que fazer com $\lambda_1^k$ e  $\lambda_2^k$?
+#### Legal, mas o que fazer com $`\lambda_1^k`$ e  $`\lambda_2^k`$?
 
 Vamos utilizar a forma exponencial para expressar esses números complexos:\
 $\lambda_1 = (1-\alpha^2) - i2\alpha$ pode ser reescritod como \
@@ -172,17 +176,25 @@ ii)$-a(\lambda_1^k+\lambda_2^k) = -a(1+\alpha^2)\underbrace{(e^{-ik\theta_2} + e
 
 Por fim, chegamos a
 
-$$\tag{6}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} =  V_0 \left(\frac{1}{1+\alpha^2}\right)^{k-1} \begin{bmatrix} sin\left(k\frac{2\alpha}{1-\alpha^2}\right)/ \alpha \\ -cos\left(k\frac{2\alpha}{1-\alpha^2}\right) \end{bmatrix} $$
+```math
+\tag{6}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} =  V_0 \left(\frac{1}{1+\alpha^2}\right)^{k-1} \begin{bmatrix} sin\left(k\frac{2\alpha}{1-\alpha^2}\right)/ \alpha \\ -cos\left(k\frac{2\alpha}{1-\alpha^2}\right) \end{bmatrix}
+```
 
 ### Já podemos identificar k máximo?
 Já sabemos que o número de pares de colisões 'k' é tal que antecede o estado em que $v_k \rightarrow V_0^-$ e $u_k \rightarrow 0^+$. Ainda explorando esses limites para o caso em que $\alpha \rightarrow 0$, da equação 6 chegamos a
 
-$$\tag{7}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} \approx  V_0 \begin{bmatrix} sin(2k\alpha)/\alpha \\ - cos(2k\alpha) \end{bmatrix}$$
+```math
+\tag{7}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} \approx  V_0 \begin{bmatrix} sin(2k\alpha)/\alpha \\ - cos(2k\alpha) \end{bmatrix}
+
 
 #### Esse resultado faz sentido?
 
-$$\frac{mu_k^2}{2} + \frac{Mv_k^2}{2} = \frac{mV_0^2sin^2(2k\alpha)}{2\alpha^2} + \frac{MV_0^2cos^2(2k\alpha)}{2}$$
-$$= \frac{MV_0^2}{2}\left[ sin^2(2k\alpha) + cos^2(2k\alpha) \right] = \frac{MV_0^2}{2}$$
+```math
+\frac{mu_k^2}{2} + \frac{Mv_k^2}{2} = \frac{mV_0^2sin^2(2k\alpha)}{2\alpha^2} + \frac{MV_0^2cos^2(2k\alpha)}{2}
+```
+```math
+= \frac{MV_0^2}{2}\left[ sin^2(2k\alpha) + cos^2(2k\alpha) \right] = \frac{MV_0^2}{2}
+```
 
 Perfeito!
 
@@ -191,15 +203,21 @@ se a velocidade $v_k \rightarrow V_0^-$, a equação (7) nos mostra que $2k\alph
 
 Embora nossa abordagem tenha nos apresentado a uma solução cíclica, estamos interessando unicamente no primeiro valor de $m=0$, e neste caso: $2k\alpha \rightarrow \pi^-$. Relembrando que $2k$ representa o número total de colisões, vamos definir $n_c=2k$ para chegarmos a 
 
-$$n_c \rightarrow \frac{\pi^-}{\alpha}$$
+```math
+n_c \rightarrow \frac{\pi^-}{\alpha}
+```
 
 **Logo, podemos verificar que o numero de colisões totais é tal que $n_c \alpha \rightarrow \pi$**
 
 ### Podemos explorar mais um pouco... 
 
 Quando assumimos $\alpha$ tão pequeno que a diferença [$(n_c+2)\alpha - n_c\alpha$ ] se torna pequeno o suficiente para considerarmos $n_c\alpha$ contínuo, as velocidades $u_k$ e $v_k$ se tornam diferenciáveis com relação a $n_c$, e assim temos da equação (7) que 
-$$du/dn_c \propto -v \tag{8.1}$$
-$$dv/dn_c \propto u, \tag{8.2}$$ 
+```math
+du/dn_c \propto -v \tag{8.1}
+```
+```math
+dv/dn_c \propto u, \tag{8.2}
+```
 
 e isso faz todo sentido! 
 
@@ -212,18 +230,34 @@ Contudo, quando $v$ passa a ser positivo, a velocidade $u$ experimenta sua prime
 Primeiro, vamos tornar nossas velocidades diferenciáveis com relação ao número de colisões para que tudo fique mais fácil. Sabemos que o número de colisões é discreto, contudo, no limite em que $M>>m$ o processo de transferência de energia ocorre muito gradualmente, de moddo que possamos assumir que as velocidades variam praticamente continuamente. 
 
 Partindo disso, podemos derivar, com relação o número de colisões, a equação de energia cinética total, que deve ser constante para chegarmos a
-$$ mu\frac{du}{dn_c} + Mv\frac{dv}{dn_c} = 0,\,\textrm{ou}$$
-$$ \frac{dv}{dn_c} = -\alpha^2\frac{u}{v}\frac{du}{dn_c}\tag{9}$$
+```math
+mu\frac{du}{dn_c} + Mv\frac{dv}{dn_c} = 0,\,\textrm{ou}
+```
+```math
+\frac{dv}{dn_c} = -\alpha^2\frac{u}{v}\frac{du}{dn_c}\tag{9}
+```
 
 Vamos assumir inocentemente que 
-$$ \frac{dv}{dn_c} = \alpha^2u \textrm{, e}\tag{10.1}$$
-$$ \frac{du}{dn_c} = -v\tag{10.2}$$
+```math
+\frac{dv}{dn_c} = \alpha^2u \textrm{, e}\tag{10.1}
+```
+
+```math
+\frac{du}{dn_c} = -v\tag{10.2}
+```
+
 para que a equação (9) seja satisfeita e aqui utilizamos o fato de que $v$ precisa ser negativo para que $u$ aumente. Vamos resolver as equações (10). Inicialmente, podemos afirmar que 
-$$d^2u/dn_c^2 = -\alpha^2u \tag{11}.$$
+```math
+d^2u/dn_c^2 = -\alpha^2u \tag{11}.
+```
 
 Devido à aparente ciclicidade em $u$, partimos da solução genérica (e complexa) $u = c_1e^{iwn_c} + c_2e^{-iwn_c}$ e a substituitmos em (11) para chegarmos a 
-$$ -w^2(c_1e^{iwn_c} + c_2e^{-iwn_c}) = -\alpha^2(c_1e^{iwn_c} + c_2e^{-iwn_c})\textrm{ e}$$
-$$ \alpha^2 = w^2 \rightarrow w = \pm \alpha$$
+```math
+-w^2(c_1e^{iwn_c} + c_2e^{-iwn_c}) = -\alpha^2(c_1e^{iwn_c} + c_2e^{-iwn_c})\textrm{ e}
+```
+```math
+\alpha^2 = w^2 \rightarrow w = \pm \alpha
+```
 
 As condições de contorno:
 
@@ -233,15 +267,23 @@ As condições de contorno:
 
 Assim: 
 
-$$ u = \pm i\frac{V_0}{2\alpha}(e^{i \alpha n_c} + e^{-i \alpha n_c}) \textrm{, ou}$$
-$$ u = \pm\frac{V_0}{\alpha}sin(\alpha n_c)$$
+```math
+u = \pm i\frac{V_0}{2\alpha}(e^{i \alpha n_c} + e^{-i \alpha n_c}) \textrm{, ou}
+```
+```math
+u = \pm\frac{V_0}{\alpha}sin(\alpha n_c)
+```
 
 Desde que a cada par de colisões a velocidade inicial de $u$ aumenta, vamos optar pela solução 
 
-$$ u = +\frac{V_0}{\alpha}sin(\alpha n_c)\tag{12}$$
+```math
+u = +\frac{V_0}{\alpha}sin(\alpha n_c)\tag{12}
+```
 
 Similarmente:
-$$ v = -V_0cos( \alpha n_c)\tag{13},$$
+```math
+v = -V_0cos( \alpha n_c)\tag{13},
+```
 
 e novamente chegamos às equações em (7). Notemos que $mu^2/2$ $+$ $Mv^2/2$ fornece $MV_0^2/2$, a energia cinética total.
 
@@ -259,15 +301,21 @@ Veja como a equação (13) se assemelha à equação de um sistema massa-mola si
 Assim sendo, podemos pensar que durante o intervalo em que o bloco maior está colidindo com o bloco menor, seu movimento é equivalente a de um sistema massa-mola cuja constante de mola $k$ é equivalente à massa $m$ do bloco menor! 
 
 Podemos definir, então, uma posição arbitrária $x'$ tal que 
-$$kx'^2/2 + Mv^2/2 = E_{Total} = MV_0^2/2 \textrm{,}$$
+```math
+kx'^2/2 + Mv^2/2 = E_{Total} = MV_0^2/2 \textrm{,}
+```
 
 ou melhor:
-$$mx'^2/2 + Mv^2/2 = MV_0^2/2.$$
+```math
+mx'^2/2 + Mv^2/2 = MV_0^2/2.
+```
 
 Por coveniência, vamos assumir que a relação acima é satisfeita com $x'=-u$, com $u$ positivo, e $x'$ pode ser interpretado com sendo o deslocamento da mola contraída, que adiquire energia potencial enquanto o bloco maior "espreme" o bloco menor contra a parede.   
 
 Oras, se $F = Mdv/dt$ e $F=-kx$ tal que $k=m$. Então,  
-$$dv/dt = \alpha^2u,$$
+```math
+dv/dt = \alpha^2u,
+```
 como a equação (10.1).
 
 Assim, quando $M>>m$ o sistema é comparável a um sistema massa-mola com constante de mola $k=m$, e de alguma forma podemos estimar a posição do bloco maior a partir da velocidade do bloco menor. Se faz importante notar que a comparação com o sistema massa mola foi alcançada assumindo $M>>m$ e só ocorre durante o intervalo em que há colisão entre os blocos, de modo que $u$, ou $x'$, não irão exprimentar senoides inteiras.  
@@ -281,35 +329,53 @@ Ainda vimos que a transformação $C$ apresenta autovalores complexos, muito út
 Segundo o teorema das matrizes "Scaling-Rotating", uma matriz $2\times 2$ que possui auto valores complexos pode ser reescrita na forma $C = PRP^{-1}$ em que $R$ é a incrível representação de uma matriz de rotação com ângulo definidos pelos autovalores de $C$. Ainda, se a norma desses autovalores for diferente de 1, $R$ se torna uma matriz de escala e rotação onde quer que opere.
 
 Se $\lambda_1 = a + ib$, a matriz $R$ é dada simplesmente por: 
-$$R = \begin{bmatrix} a & -b \\ b & a \end{bmatrix},$$
+```math
+R = \begin{bmatrix} a & -b \\ b & a \end{bmatrix},
+```
 
 enquanto $P$, a matriz que permite relacionar $C$ com uma matriz de rotação é definida por
-$$P =\begin{bmatrix} | & |\\Re(\nu_1)&-Im(\nu_1) \\  | & | \end{bmatrix}$$
+```math
+P =\begin{bmatrix} | & |\\Re(\nu_1)&-Im(\nu_1) \\  | & | \end{bmatrix}
+```
+
 onde deve-se optar por apenas um dos autovalores $\lambda_i$ e autovetor $\nu_i$. Sendo assim, para o nosso caso $\lambda = (1+\alpha^2) - i2\alpha$, e $\nu^T = [1, i\alpha]$ :
 
-$$C = \frac{1}{1+\alpha^2} \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} 1-\alpha^2 & -2\alpha \\ 2\alpha & 1-\alpha^2 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1/\alpha \end{bmatrix}$$
-$$= \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1/\alpha \end{bmatrix},$$
+```math
+C = \frac{1}{1+\alpha^2} \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} 1-\alpha^2 & -2\alpha \\ 2\alpha & 1-\alpha^2 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1/\alpha \end{bmatrix}
+```
+
+```math
+= \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1/\alpha \end{bmatrix},
+```
 
 tal que $\theta = arctan (-2\alpha/(1-\alpha^2))$ e portanto:
 
-$$ C^k = \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix}^k \begin{bmatrix} 1 & 0 \\ 0 & -1/\alpha \end{bmatrix}.$$
+```math
+ C^k = \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix}^k \begin{bmatrix} 1 & 0 \\ 0 & -1/\alpha \end{bmatrix}.
+ ```
 
 Aqui temos um resultado muito interessante: as colisões representadas por $C^k$ representam $k$ suscessivas rotações de ângulo $\theta$ no espaço $u-v$. 
 
 Assim,
 
-$$ \begin{bmatrix} u_k \\ v_k  \end{bmatrix}  = \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix}^k \begin{bmatrix} 1 & 0 \\ 0 & -1/\alpha \end{bmatrix} \begin{bmatrix} u_0 \\ v_0  \end{bmatrix}\tag{14}.$$
+```math
+ \begin{bmatrix} u_k \\ v_k  \end{bmatrix}  = \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix}^k \begin{bmatrix} 1 & 0 \\ 0 & -1/\alpha \end{bmatrix} \begin{bmatrix} u_0 \\ v_0  \end{bmatrix}\tag{14}.
+ ```
 
 Ou
 
-$$ \begin{bmatrix} u_k \\ v_k  \end{bmatrix}  = \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix}^k  \begin{bmatrix} 0 \\ V_0/\alpha  \end{bmatrix}.$$
+```math
+ \begin{bmatrix} u_k \\ v_k  \end{bmatrix}  = \begin{bmatrix} 1 & 0 \\ 0 & -\alpha \end{bmatrix} \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix}^k  \begin{bmatrix} 0 \\ V_0/\alpha  \end{bmatrix}.
+ ```
 
 
 Sabemos que o processo de colisões se inicia com $[u_0,v_0] = [0,-V_0]$ e tem seu fim quando $[u_0,v_0] \rightarrow [0^-,+V_0^-]$, implicando em uma rotação de aproximadamente $-\pi$ no espaço definido pelas duas velocidades. A partir da equação (14) vemos que cada par de colisões rotaciona o vetor $[u,v]$ em um ângulo $\theta$ de aproximadamente $-2\alpha,$ particularmente válido quando $M>>m$.
 
 Portanto, podemos descobrir o número total de colisões nos perguntando: quantos  $-\alpha$ cabem em $-\pi$? A resposta:
 
-$$n_c = \frac{\pi^-}{\alpha},$$
+```math
+n_c = \frac{\pi^-}{\alpha},
+```
 o número total de colisoes.
 
 # Gráficos das Soluções
