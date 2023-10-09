@@ -159,7 +159,7 @@ Matrizes diagonais, como $\Lambda^k$ atuam como transformações de escala, alte
 
 
 ### Calculando as velocidades $`u_k`$ e $`u_k`$
-Conhecendo a equação 4, vamos aplicar o operador $C^k$ sobre as velocidades iniciais $u_0=0$ e $v_0$ = -V$_0$:
+Conhecendo a equação 4, vamos aplicar o operador $C^k$ sobre as velocidades iniciais $`u_0=0`$ e $`v_0 = -V_0`$:
 
 ```math
 \begin{bmatrix} u_k \\ v_k  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right)^k \begin{bmatrix} 1 & 1 \\ ia & -ia  \end{bmatrix} \begin{bmatrix} \lambda_1^k & 0 \\ 0 & \lambda_2^k  \end{bmatrix} \begin{bmatrix} \frac{1}{2} & \frac{-i}{2\alpha} \\ \frac{1}{2} & \frac{i}{2\alpha} \end{bmatrix} \begin{bmatrix} 0 \\ -V_0  \end{bmatrix}.
