@@ -408,15 +408,15 @@ Percebemos que iniciamente as colisões levam a redução  $|v_k|$ e aumento $u_
 
 Aqui, $u_k$ é sempre a velocidade do bloco menor após se colidir com a parede. Portanto, a velocidade negativa vista após $2k>314$ não tem significado físico, etem origem na solução utilizada. 
 
-![Velocity_u](images/u.png)
+![Velocity_u](https://raw.githubusercontent.com/matos-pedro/pi_collisions/main/images/u.png)
 *Figura 1: esquerda: velocidade $`u_k`$, do bloco menor, calculada a partir das soluções apresentadas; direita: desvio da velocidade calculada com relação à solução analítica.*
 
-![Velocity_v](images/v.png)
+![Velocity_v](https://raw.githubusercontent.com/matos-pedro/pi_collisions/main/images/v.png)
 *Figura 2: esquerda: velocidade $`v_k`$, do bloco maior, calculada a partir das soluções apresentadas; direita: desvio da velocidade calculada com relação à solução analítica.*
 
 A figura 3 mostra a evolução do vetor velocidade [$`v_k`$,$`u_k`$] após cada par de colisão m-M e m-wall para um valor de $\alpha = 10^{-1}$. A primeira posição corresponde ao valor [-1,0] e a evolução do par de velocidades ocorre no sentido horário, com incrementos de $`\theta = 2\alpha/(1+\alpha^2)`$. Note a discrepância da velocidade aproximada com relação às demais. 
 
-![Arco](images/arco2.png) 
+![Arco](https://raw.githubusercontent.com/matos-pedro/pi_collisions/main/images/arco2.png) 
 *Figura 3: evolução do vetor [$`v_k`$,$`u_k`$].*
 
 Por fim, $\pi$ é calculado a partir do número total de colisões, aqui definido como $\pi_c$, e é comparado com o valor de $\pi$ definido pela biblioteca numpy, aqui definido simplesmente como 'numpy.pi'. Os resutlados obtidos são apresentados na figura (4) para $\alpha$ variando de $10^{-0.5}$ a $10^{-4}$. 
@@ -425,7 +425,7 @@ Os resultados à esquerda representam a razão $`\pi_c`$/numpy.pi, que se aproxi
 
 À direita, vê-se o desvio entre os valores calculados e de referência e que seu valor é de aproximadamente $`\alpha`$ : $`\Delta \pi \approx \alpha`$ .
 
-![pi_error](images/pi_1.png)
+![pi_error](https://raw.githubusercontent.com/matos-pedro/pi_collisions/main/images/pi_1.png)
 *Figura 4: cálculo de $`\pi`$; a esquerda, a razão $`\pi_c`$/numpy.pi; a direita, o desvio (numpy.pi - $`\pi_c`$)*
 
 Sendo assim, podemos estimar $`\pi`$ e definir sua precisão a partir de $`\alpha`$.
