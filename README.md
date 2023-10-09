@@ -185,6 +185,7 @@ Já sabemos que o número de pares de colisões 'k' é tal que antecede o estado
 
 ```math
 \tag{7}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} \approx  V_0 \begin{bmatrix} sin(2k\alpha)/\alpha \\ - cos(2k\alpha) \end{bmatrix}
+``````
 
 
 #### Esse resultado faz sentido?
