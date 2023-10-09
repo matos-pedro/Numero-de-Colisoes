@@ -1,4 +1,4 @@
-# As aventuras de $\pi$
+# As aventuras de $`\pi`$
 
 # Solução Primeira
 ### Condições Iniciais
