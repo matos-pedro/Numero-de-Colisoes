@@ -1,4 +1,4 @@
-# $`\pi`$ = count(:red_circle::boom::black_circle:) ?
+# $`\pi`$ = count(:black_circle::boom: :red_circle:) ?
 
 Esse texto se inspira no problema apresentado no vídeo ["The most unexpected answer to a counting puzzle"](https://www.youtube.com/watch?v=HEfHFsfGXjs) e apresenta uma solução a sua maneira. 
 
