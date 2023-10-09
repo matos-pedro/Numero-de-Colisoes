@@ -132,7 +132,7 @@ $`\nu{_1}^T = [1,i\alpha]$ e $\nu{_2}^T = [1,-i\alpha]`$. Portanto:
 Q = \begin{bmatrix} 1 & 1 \\ ia & -ia  \end{bmatrix}
 ```
 
-##### Encontrando $Q^{-1}$:
+##### Encontrando $`Q^{-1}`$:
 
 ```math
 Q^{-1} = \frac{1}{det(Q)}\begin{bmatrix} -i\alpha & -1 \\ -i\alpha & 1  \end{bmatrix} = \frac{i}{2\alpha}\begin{bmatrix} -i\alpha & -1 \\ -i\alpha & 1  \end{bmatrix}.
@@ -153,7 +153,7 @@ C^k = \begin{bmatrix} 1 & 1 \\ ia & -ia  \end{bmatrix} \begin{bmatrix} \lambda_1
 Matrizes diagonais, como $\Lambda^k$ atuam como transformações de escala, alterando o comprimento dos componentes dos vetores em que são aplicadas. No nosso caso, em que esses fatores de escala são números complexos, estamos lidando com algo cíclico, uma abordagem que será explorada na **Solução 2** ao fim.  
 
 
-### Calculando as velocidades $u_k$ e $u_k$
+### Calculando as velocidades $`u_k`$ e $`u_k`$
 Conhecendo a equação 4, vamos aplicar o operador $C^k$ sobre as velocidades iniciais $u_0=0$ e $v_0$ = -V$_0$:
 
 ```math
@@ -180,9 +180,9 @@ $\lambda_2 = (1+\alpha^2)e^{i\theta_2}$ tal que $\theta_2 = arctan\left(\frac{+2
 
 Se nos limitarmos ao limite em que $\alpha << 1$, ou M >> m, podemos assumir que $\arctan\left(\frac{-2\alpha}{1-\alpha^2}\right)$ se aproxima de $\frac{-2\alpha}{1-\alpha^2}$, simplificando consideravalemente nossos cálculos, já que chegamos a conveniente situação em que $\theta_1 = - \theta_2$. Assim sendo,
 
-i)$i(\lambda_2^k-\lambda_1^k) = i(1+\alpha^2)\underbrace{(e^{-ik\theta_2} - e^{+ik\theta_2})}_{=-2isin(k\theta_2)} = 2(1+\alpha^2)sin(k\theta_2) = 2(1+\alpha^2)sin\left(k\frac{2\alpha}{1-\alpha^2}\right).$ Também,
+i)$`i(\lambda_2^k-\lambda_1^k) = i(1+\alpha^2)\underbrace{(e^{-ik\theta_2} - e^{+ik\theta_2})}_{=-2isin(k\theta_2)} = 2(1+\alpha^2)sin(k\theta_2) = 2(1+\alpha^2)sin\left(k\frac{2\alpha}{1-\alpha^2}\right).`$ Também,
 
-ii)$-a(\lambda_1^k+\lambda_2^k) = -a(1+\alpha^2)\underbrace{(e^{-ik\theta_2} + e^{+ik\theta_2})}_{=2cos(k\theta_2)} = -2a(1+\alpha^2)cos\left(k\frac{2\alpha}{1-\alpha^2}\right).$ 
+ii)$`-a(\lambda_1^k+\lambda_2^k) = -a(1+\alpha^2)\underbrace{(e^{-ik\theta_2} + e^{+ik\theta_2})}_{=2cos(k\theta_2)} = -2a(1+\alpha^2)cos\left(k\frac{2\alpha}{1-\alpha^2}\right).`$ 
 
 Por fim, chegamos a
 
