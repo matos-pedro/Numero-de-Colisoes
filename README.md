@@ -222,7 +222,7 @@ n_c \rightarrow \frac{\pi^-}{\alpha}
 
 ### Podemos explorar mais um pouco... 
 
-Quando assumimos $\alpha$ tão pequeno que a diferença [$(n_c+2)\alpha - n_c\alpha$ ] se torna pequeno o suficiente para considerarmos $n_c\alpha$ contínuo, as velocidades $u_k$ e $v_k$ se tornam diferenciáveis com relação a $n_c$, e assim temos da equação (7) que 
+Quando assumimos $\alpha$ tão pequeno que a diferença [$`(n_c+2)\alpha - n_c\alpha`$ ] se torna pequeno o suficiente para considerarmos $n_c\alpha$ contínuo, as velocidades $u_k$ e $v_k$ se tornam diferenciáveis com relação a $n_c$, e assim temos da equação (7) que 
 ```math
 du/dn_c \propto -v \tag{8.1}
 ```
