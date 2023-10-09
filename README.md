@@ -109,7 +109,10 @@ QQ^{-1} = I
 
 ##### Encontrando $\Lambda$:
 
-$`det(C-\lambda I) =  [(1-\alpha^2)-\lambda]^2 + 4\alpha^2 = 0`$ e aqui nós encontramos dois autovalores complexos:\
+```math
+det(C-\lambda I) =  [(1-\alpha^2)-\lambda]^2 + 4\alpha^2 = 0`
+```
+e aqui nós encontramos dois autovalores complexos:\
 $\lambda_1 = (1-\alpha^2) - i2\alpha$ e \
 $\lambda_2 = (1-\alpha^2) + i2\alpha$. 
 
@@ -120,14 +123,21 @@ $\lambda_2 = (1-\alpha^2) + i2\alpha$.
 
 Já os autovetores $v$ são tais que 
 
-$(C - \lambda_i I)\begin{bmatrix} x_i \\ y_i  \end{bmatrix} = 0$, que nos leva aos autovetores
-$\nu{_1}^T = [1,i\alpha]$ e $\nu{_2}^T = [1,-i\alpha]$. Portanto:
+```math
+(C - \lambda_i I)\begin{bmatrix} x_i \\ y_i  \end{bmatrix} = 0,
+```
+que nos leva aos autovetores
+$`\nu{_1}^T = [1,i\alpha]$ e $\nu{_2}^T = [1,-i\alpha]`$. Portanto:
 ```math
 Q = \begin{bmatrix} 1 & 1 \\ ia & -ia  \end{bmatrix}
 ```
 
 ##### Encontrando $Q^{-1}$:
-$Q^{-1} = \frac{1}{det(Q)}\begin{bmatrix} -i\alpha & -1 \\ -i\alpha & 1  \end{bmatrix} = \frac{i}{2\alpha}\begin{bmatrix} -i\alpha & -1 \\ -i\alpha & 1  \end{bmatrix}.$ Logo,
+
+```math
+Q^{-1} = \frac{1}{det(Q)}\begin{bmatrix} -i\alpha & -1 \\ -i\alpha & 1  \end{bmatrix} = \frac{i}{2\alpha}\begin{bmatrix} -i\alpha & -1 \\ -i\alpha & 1  \end{bmatrix}.
+```
+Logo,
 
 ```math
 Q^{-1} = \begin{bmatrix} \frac{1}{2} & \frac{-i}{2\alpha} \\ \frac{1}{2} & \frac{i}{2\alpha} \end{bmatrix}
@@ -185,7 +195,7 @@ Já sabemos que o número de pares de colisões 'k' é tal que antecede o estado
 
 ```math
 \tag{7}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} \approx  V_0 \begin{bmatrix} sin(2k\alpha)/\alpha \\ - cos(2k\alpha) \end{bmatrix}
-``````
+```
 
 
 #### Esse resultado faz sentido?
@@ -193,11 +203,11 @@ Já sabemos que o número de pares de colisões 'k' é tal que antecede o estado
 ```math
 \frac{mu_k^2}{2} + \frac{Mv_k^2}{2} = \frac{mV_0^2sin^2(2k\alpha)}{2\alpha^2} + \frac{MV_0^2cos^2(2k\alpha)}{2}
 ```
-```math
-= \frac{MV_0^2}{2}\left[ sin^2(2k\alpha) + cos^2(2k\alpha) \right] = \frac{MV_0^2}{2}
-```
 
-Perfeito!
+
+```math
+\frac{MV_0^2}{2}\left[ sin^2(2k\alpha) + cos^2(2k\alpha) \right] = \frac{MV_0^2}{2}
+```
 
 #### por fim...
 se a velocidade $v_k \rightarrow V_0^-$, a equação (7) nos mostra que $2k\alpha$ deve tender a  $(2m+1)\pi^-$ tal que $m=0,1,...$ 
@@ -397,26 +407,26 @@ Percebemos que iniciamente as colisões levam a redução  $|v_k|$ e aumento $u_
 Aqui, $u_k$ é sempre a velocidade do bloco menor após se colidir com a parede. Portanto, a velocidade negativa vista após $2k>314$ não tem significado físico, etem origem na solução utilizada. 
 
 ![Alt text](images/u.png)
-*Figura 1: esquerda: velocidade $u_k$, do bloco menor, calculada a partir das soluções apresentadas; direita: desvio da velocidade calculada com relação à solução analítica.*
+*Figura 1: esquerda: velocidade $`u_k`$, do bloco menor, calculada a partir das soluções apresentadas; direita: desvio da velocidade calculada com relação à solução analítica.*
 
 ![Alt text](images/v.png)
-*Figura 2: esquerda: velocidade $v_k$, do bloco maior, calculada a partir das soluções apresentadas; direita: desvio da velocidade calculada com relação à solução analítica.*
+*Figura 2: esquerda: velocidade $`v_k`$, do bloco maior, calculada a partir das soluções apresentadas; direita: desvio da velocidade calculada com relação à solução analítica.*
 
-A figura 3 mostra a evolução do vetor velocidade [$v_k$,$u_k$] após cada par de colisão m-M e m-wall para um valor de $\alpha = 10^{-1}$. A primeira posição corresponde ao valor [-1,0] e a evolução do par de velocidades ocorre no sentido horário, com incrementos de$\theta = 2\alpha/(1+\alpha^2)$. Note a discrepância da velocidade aproximada com relação às demais. 
+A figura 3 mostra a evolução do vetor velocidade [$`v_k`$,$`u_k`$] após cada par de colisão m-M e m-wall para um valor de $\alpha = 10^{-1}$. A primeira posição corresponde ao valor [-1,0] e a evolução do par de velocidades ocorre no sentido horário, com incrementos de $`\theta = 2\alpha/(1+\alpha^2)`$. Note a discrepância da velocidade aproximada com relação às demais. 
 
 ![Alt text](images/arco2.png) 
-*Figura 3: evolução do vetor [$v_k$,$u_k$].*
+*Figura 3: evolução do vetor [$`v_k`$,$`u_k`$].*
 
 Por fim, $\pi$ é calculado a partir do número total de colisões, aqui definido como $\pi_c$, e é comparado com o valor de $\pi$ definido pela biblioteca numpy, aqui definido simplesmente como 'numpy.pi'. Os resutlados obtidos são apresentados na figura (4) para $\alpha$ variando de $10^{-0.5}$ a $10^{-4}$. 
 
-Os resultados à esquerda representam a razão $\pi_c$/numpy.pi, que se aproxima de 1 à medida que $\alpha$ se torna mais próximo de 0.
+Os resultados à esquerda representam a razão $`\pi_c`$/numpy.pi, que se aproxima de 1 à medida que $`\alpha`$ se torna mais próximo de 0.
 
-À direita, vê-se o desvio entre os valores calculados e de referência e que seu valor é de aproximadamente $\alpha$ : $\Delta \pi \approx \alpha$ .
+À direita, vê-se o desvio entre os valores calculados e de referência e que seu valor é de aproximadamente $`\alpha`$ : $`\Delta \pi \approx \alpha`$ .
 
 ![Alt text](images/pi_1.png)
-*Figura 4: cálculo de $\pi$; a esquerda, a razão $\pi_c$/numpy.pi; a direita, o desvio (numpy.pi - $\pi_c$)*
+*Figura 4: cálculo de $`\pi`$; a esquerda, a razão $`\pi_c`$/numpy.pi; a direita, o desvio (numpy.pi - $`\pi_c`$)*
 
-Sendo assim, podemos estimar $\pi$ e definir sua precisão a partir de $\alpha$.
+Sendo assim, podemos estimar $`\pi`$ e definir sua precisão a partir de $`\alpha`$.
 
 
 
