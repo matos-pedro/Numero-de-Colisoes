@@ -97,8 +97,10 @@ Inicialmente, vamos usar da autodecomposição para calcular $C^k$: $C$ pode ser
 
 E por que usar isso? Porque podemos reescrever
 
-$$C^k = \underbrace{Q \Lambda Q^{-1} ... Q \Lambda Q^{-1}}_{k \times} = Q \Lambda^{k}Q^{-1}$$ 
-desde que $$QQ^{-1} = I$$
+```math
+C^k = \underbrace{Q \Lambda Q^{-1} ... Q \Lambda Q^{-1}}_{k \times} = Q \Lambda^{k}Q^{-1}$$ 
+desde que $$QQ^{-1} = I
+```
 
 #### Então, vamos achar $\Lambda$ e $Q$!
 
@@ -108,23 +110,31 @@ $det(C-\lambda I) =  [(1-\alpha^2)-\lambda]^2 + 4\alpha^2 = 0$ e aqui nós encon
 $\lambda_1 = (1-\alpha^2) - i2\alpha$ e \
 $\lambda_2 = (1-\alpha^2) + i2\alpha$. 
 
-$$\Lambda = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2  \end{bmatrix}$$
+```math
+\Lambda = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2  \end{bmatrix}
+```
 ##### Encontrando $Q$:
 
 Já os autovetores $v$ são tais que 
 $(C - \lambda_i I)\begin{bmatrix} x_i \\ y_i  \end{bmatrix} = 0$, que nos leva aos autovetores
 $\nu{_1}^T = [1,i\alpha]$ e $\nu{_2}^T = [1,-i\alpha]$. Portanto:
-$$Q = \begin{bmatrix} 1 & 1 \\ ia & -ia  \end{bmatrix}$$
+```math
+Q = \begin{bmatrix} 1 & 1 \\ ia & -ia  \end{bmatrix}
+```
 
 ##### Encontrando $Q^{-1}$:
 $Q^{-1} = \frac{1}{det(Q)}\begin{bmatrix} -i\alpha & -1 \\ -i\alpha & 1  \end{bmatrix} = \frac{i}{2\alpha}\begin{bmatrix} -i\alpha & -1 \\ -i\alpha & 1  \end{bmatrix}.$ Logo,
 
-$$Q^{-1} = \begin{bmatrix} \frac{1}{2} & \frac{-i}{2\alpha} \\ \frac{1}{2} & \frac{i}{2\alpha} \end{bmatrix}$$
+```math
+Q^{-1} = \begin{bmatrix} \frac{1}{2} & \frac{-i}{2\alpha} \\ \frac{1}{2} & \frac{i}{2\alpha} \end{bmatrix}
+```
 
 É possível provar que $QQ^{-1} = I$. 
 
 Por fim, chegamos a
-$$C^k = \begin{bmatrix} 1 & 1 \\ ia & -ia  \end{bmatrix} \begin{bmatrix} \lambda_1^k & 0 \\ 0 & \lambda_2^k  \end{bmatrix} \begin{bmatrix} \frac{1}{2} & \frac{-i}{2\alpha} \\ \frac{1}{2} & \frac{i}{2\alpha} \end{bmatrix}$$ 
+```math
+C^k = \begin{bmatrix} 1 & 1 \\ ia & -ia  \end{bmatrix} \begin{bmatrix} \lambda_1^k & 0 \\ 0 & \lambda_2^k  \end{bmatrix} \begin{bmatrix} \frac{1}{2} & \frac{-i}{2\alpha} \\ \frac{1}{2} & \frac{i}{2\alpha} \end{bmatrix}
+``` 
 
 Matrizes diagonais, como $\Lambda^k$ atuam como transformações de escala, alterando o comprimento dos componentes dos vetores em que são aplicadas. No nosso caso, em que esses fatores de escala são números complexos, estamos lidando com algo cíclico, uma abordagem que será explorada na **Solução 2** ao fim.  
 
