@@ -1,6 +1,6 @@
 # As aventuras de $`\pi`$
 
-# Solução Primeira
+## Solução Primeira
 ### Condições Iniciais
 Vamos adotar a seguinte convenção: 
 
