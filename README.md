@@ -16,36 +16,54 @@ Dado o problema, duas colisões são possíveis: do bloco menor com o bloco maio
 
 ### M-m Collision
 Partindo das conservações de quantidade de movimento e energia cinética, a primeira colisão entre os dois blocos levará o sistema a um novo estado '1' tal que: 
-$$\begin{align} \tag{1} \frac{mu_1^2}{2} + \frac{Mv_1^2}{2} =\frac{mu_{0}^2}{2} + \frac{Mv_{0}^2}{2}\end{align}$$  
-$$mu_1 + Mv_1 = mu_0 + Mv_0.$$
+```math
+\begin{align} \tag{1} \frac{mu_1^2}{2} + \frac{Mv_1^2}{2} =\frac{mu_{0}^2}{2} + \frac{Mv_{0}^2}{2}\end{align}
+```
+
+```math
+mu_1 + Mv_1 = mu_0 + Mv_0
+```
 
 A solução desse sistema de equações nos leva às novas velocidades $u_1$ e $v_1$ definidas por:
-$$\begin{align}
+```math
+\begin{align}
 u_1 = \frac{m-M}{m+M}u_0 + \frac{2M}{m+M}v_0\\
 v_1 = \frac{2m}{m+M}u_0 + \frac{M-m}{m+M}v_0
-\end{align}$$
+\end{align}
+```
 
 Por conveniência, vamos definir $\alpha = \sqrt{m/M}$ de modo que possamos expressar $u_1$ e $v_1$ em notação matricial como: 
 
-$$\tag{2}\begin{bmatrix} u_1 \\ v_1  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right) \begin{bmatrix} \alpha^2-1 & 2 \\ 2\alpha^2 & 1-\alpha^2  \end{bmatrix} \begin{bmatrix} u_0 \\ v_0  \end{bmatrix},$$
+```math
+\tag{2}\begin{bmatrix} u_1 \\ v_1  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right) \begin{bmatrix} \alpha^2-1 & 2 \\ 2\alpha^2 & 1-\alpha^2  \end{bmatrix} \begin{bmatrix} u_0 \\ v_0  \end{bmatrix},
+```
 válido para quaisquer $u_0$ e $v_0$.
 
 ### m-wall Collision
 Podemos observar da equação 2 que após a primeira colisão, $u_1$ terá velocidade negativa (mesmo sentido que $v_0$) e portando, irá eventualmente colidir com a parede. Sendo esta uma colisão elástica, podemos afirmar que o estado '2' resultante dessa segunda colisão é:
 
-$$\tag{3}\begin{bmatrix} u_2 \\ v_2  \end{bmatrix} = \begin{bmatrix} -u_1 \\ v_1  \end{bmatrix} = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} u_1 \\ v_1  \end{bmatrix}.$$
+```math
+\tag{3}\begin{bmatrix} u_2 \\ v_2  \end{bmatrix} = \begin{bmatrix} -u_1 \\ v_1  \end{bmatrix} = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} u_1 \\ v_1  \end{bmatrix}.
+```
 
 Unindo os resultados das equações 2 e 3, chegamos a 
-$$\begin{bmatrix} u_2 \\ v_2  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right)\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} \alpha^2-1 & 2 \\ 2\alpha^2 & 1-\alpha^2  \end{bmatrix}\begin{bmatrix} u_0 \\ v_0  \end{bmatrix}.$$
+
+```math
+\begin{bmatrix} u_2 \\ v_2  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right)\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} \alpha^2-1 & 2 \\ 2\alpha^2 & 1-\alpha^2  \end{bmatrix}\begin{bmatrix} u_0 \\ v_0  \end{bmatrix}
+```
 
 Para fins de simplificação, vamos assumir que as colisões sempre ocorrem aos pares, com uma colisão m-parede SEMPRE sucedendo uma colisão m-M. Se estivermos errados quanto à última colisão, estaremos errando o número total de colisões em +1, um valor que se tornará negligenciável à medida que o numero total de colisões aumenta.      
 
 Assim sendo,
-$$\begin{bmatrix} u_2 \\ v_2  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right) \begin{bmatrix} 1-\alpha^2 & -2 \\ 2\alpha^2 & 1-\alpha^2  \end{bmatrix}\begin{bmatrix} u_0 \\ v_0  \end{bmatrix}.$$
+```math
+\begin{bmatrix} u_2 \\ v_2  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right) \begin{bmatrix} 1-\alpha^2 & -2 \\ 2\alpha^2 & 1-\alpha^2  \end{bmatrix}\begin{bmatrix} u_0 \\ v_0  \end{bmatrix}
+```
 
 Se o resultado acima já representa necessariamente o resultado de duas colições, vamos definir aqui $k$ positivo para representar o PAR de colisões de modo que possamos afirmar
 
-$$\tag{4}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right)^k \underbrace{\begin{bmatrix} 1-\alpha^2 & -2 \\ 2\alpha^2 & 1-\alpha^2  \end{bmatrix}^k}_{C^k}\begin{bmatrix} u_0 \\ v_0  \end{bmatrix},$$
+```math
+\tag{4}\begin{bmatrix} u_k \\ v_k  \end{bmatrix} = \left(\frac{1}{1+\alpha^2}\right)^k \underbrace{\begin{bmatrix} 1-\alpha^2 & -2 \\ 2\alpha^2 & 1-\alpha^2  \end{bmatrix}^k}_{C^k}\begin{bmatrix} u_0 \\ v_0  \end{bmatrix},
+```
 
 em que $C$ sintetiza a transformação que representa o par de colisões. 
 
@@ -53,7 +71,10 @@ Notemos que k = 1 significa o total de duas colisões, uma relativa à colisão 
 
 ### A última Colisão
 Não haverá mais colisão quando $u_k$ e $v_k$ forem positivos de modo que o bloco 'm' não alcance o bloco 'M', ou melhor: $v_k$ > $u_k$. Limitando-nos a essa condição, a conservação de energia nos fornece
-$$\frac{mu_k^2}{2} + \frac{Mv_k^2}{2} = \frac{MV_{0}^2}{2} \rightarrow v_k = V_0\sqrt{1 - \frac{m}{M}\frac{u_k^2}{V_0^2}}.$$
+
+```math
+\frac{mu_k^2}{2} + \frac{Mv_k^2}{2} = \frac{MV_{0}^2}{2} \rightarrow v_k = V_0\sqrt{1 - \frac{m}{M}\frac{u_k^2}{V_0^2}}.
+```
 Se $M >> m$ e  $u_k^2 < V_0^2$, $v_k/V_0$ tenderá a um pela esquerda: $v_k/V_0 \rightarrow 1^-$. Similarmente, complementa-se que $u_k$ tenderá a 0 pela direita, ou melhor: $u_k \rightarrow 0^+$. 
 
 #### Mas vamos explorá-la mais um pouco...
