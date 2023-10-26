@@ -387,7 +387,7 @@ Ou
  ```
 
 
-Sabemos que o processo de colisões se inicia com $[u_0,v_0] = [0,-V_0]$ e tem seu fim quando $[u_0,v_0] \rightarrow [0^-,+V_0^-]$, implicando em uma rotação de aproximadamente $-\pi$ no espaço definido pelas duas velocidades. A partir da equação (14) vemos que cada par de colisões rotaciona o vetor $[u,v]$ em um ângulo $\theta$ de aproximadamente $-2\alpha,$ particularmente válido quando $M>>m$.
+Sabemos que o processo de colisões se inicia com $[u_0,v_0] = [0,-V_0]$ e tem seu fim quando $[u_0,v_0] \rightarrow [0^+,+V_0^-]$, implicando em uma rotação de aproximadamente $-\pi$ no espaço definido pelas duas velocidades. A partir da equação (14) vemos que cada par de colisões rotaciona o vetor $[u,v]$ em um ângulo $\theta$ de aproximadamente $-2\alpha,$ particularmente válido quando $M>>m$.
 
 Portanto, podemos descobrir o número total de colisões nos perguntando: quantos  $-\alpha$ cabem em $-\pi$? A resposta:
 
